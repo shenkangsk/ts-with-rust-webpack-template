@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "lib": ["dom", "es5", "scripthost"],
+    "paths": {
+      "@assets": ["assets/*"],
+      "@ui": ["ui/*"],
+      "@types": ["types/*"]
+    }
+  },
+  "include": ["ui/**/*", "types/**/*"]
+}

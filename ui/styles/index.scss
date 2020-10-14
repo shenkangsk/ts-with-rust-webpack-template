@@ -1,0 +1,26 @@
+$primary-color: skyblue;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+
+  img {
+    margin-top: 100px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+  }
+
+  h1 {
+    color: #2086d7;
+  }
+}
