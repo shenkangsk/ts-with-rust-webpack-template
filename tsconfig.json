@@ -16,9 +16,9 @@
     "lib": ["dom", "es5", "scripthost"],
     "paths": {
       "@assets": ["assets/*"],
-      "@ui": ["ui/*"],
+      "@src": ["src/*"],
       "@types": ["types/*"]
     }
   },
-  "include": ["ui/**/*", "types/**/*"]
+  "include": ["src/**/*", "types/**/*"]
 }

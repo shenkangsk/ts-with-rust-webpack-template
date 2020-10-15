@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 const appConfig = require('../config/app.json');
 
 const config = mode => ({
   mode,
 
-  entry: path.join(__dirname, '../ui/index.ts'),
+  entry: path.join(__dirname, '../src/index.ts'),
 
   target: 'web',
 
@@ -27,7 +28,7 @@ const config = mode => ({
     extensions: ['.js', '.ts', '.tsx', '.jsx'],
     alias: {
       '@types': path.join(__dirname, '../types'),
-      '@ui': path.join(__dirname, '../ui'),
+      '@src': path.join(__dirname, '../src'),
       '@assets': path.join(__dirname, '../assets')
     }
   },
@@ -110,7 +111,7 @@ const config = mode => ({
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(__dirname, `../ui/index.ejs`)
+      template: path.join(__dirname, `../src/index.ejs`)
     }),
     new webpack.DllReferencePlugin({
       manifest: require('../dist/lib-manifest.json')
@@ -125,6 +126,11 @@ const config = mode => ({
           to: path.join(__dirname, '../dist')
         }
       ]
+    }),
+    new EslintWebpackPlugin({
+      context: path.join(__dirname, '../'),
+      files: ['src'],
+      extensions: ['js', 'ts']
     })
   ]
 });
